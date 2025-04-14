@@ -42,7 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
         { cwd: gitRoot },
         async (err: { message: any }, stdout: string, stderr: any) => {
           if (!stdout.trim()) {
-            vscode.window.showInformationMessage("git blame returned nothing 🤷‍♂️");
+            vscode.window.showInformationMessage("git blame returned nothing");
           }  
           if (err || stderr) {
             vscode.window.showErrorMessage(
