@@ -9,13 +9,15 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+  "onCommand:extension.showAuthorChanges"
+],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "GitWho.helloWorld",
-        "title": "Hello World"
+        "command": "GitWho.showAuthorChanges",
+        "title": "Show Changes by Author"
       }
     ]
   },
