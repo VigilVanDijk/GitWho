@@ -44,11 +44,11 @@ export function activate(context: vscode.ExtensionContext) {
           if (!stdout.trim()) {
             vscode.window.showInformationMessage("git blame returned nothing 🤷‍♂️");
           }  
-          // if (err || stderr) {
-          //   vscode.window.showErrorMessage(
-          //     `Failed to run git blame: ${stderr || err.message}`
-          //   );
-          // }
+          if (err || stderr) {
+            vscode.window.showErrorMessage(
+              `Failed to run git blame: ${stderr || err.message}`
+            );
+          }
 
           const authors: vscode.QuickPickItem[] = Array.from(
             new Set(
