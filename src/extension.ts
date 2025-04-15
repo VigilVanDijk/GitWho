@@ -109,9 +109,11 @@ export function activate(context: vscode.ExtensionContext) {
             }
           });
 
+          const bgcolor = getRandomPastelColor(); // Get a random pastel color for the background
+
           decorationType = vscode.window.createTextEditorDecorationType({
-            backgroundColor: getRandomPastelColor(),
-            overviewRulerColor: getRandomPastelColor(),
+            backgroundColor: bgcolor,
+            overviewRulerColor: bgcolor,
             overviewRulerLane: vscode.OverviewRulerLane.Right,
             isWholeLine: false
           });
