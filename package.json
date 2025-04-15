@@ -3,12 +3,19 @@
   "displayName": "GitWho",
   "description": "Allows user to see all contributors to a file",
   "version": "0.0.1",
+  "publisher": "VigilVanDijk",
   "engines": {
     "vscode": "^1.99.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VigilVanDijk/GitWho"
+  },
+  "homepage": "https://github.com/VigilVanDijk/GitWho",
   "activationEvents": [
   "onCommand:extension.showAuthorChanges"
 ],
@@ -21,6 +28,23 @@
       }
     ]
   },
+  "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gitWhoSidebar",
+          "title": "GitWho",
+          "icon": "media/gitwho-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitWhoSidebar": [
+        {
+          "id": "gitWhoView",
+          "name": "Author Changes"
+        }
+      ]
+    },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
