@@ -8,7 +8,7 @@
     "vscode": "^1.99.0"
   },
   "categories": [
-    "Other"
+    "Extension Packs"
   ],
   "icon": "mainIcon.png",
   "repository": {
@@ -33,7 +33,7 @@
         {
           "id": "gitWhoSidebar",
           "title": "GitWho",
-          "icon": "media/sidebar_icon.svg"
+          "icon": "media/sidebar_icon.png"
         }
       ]
     },
