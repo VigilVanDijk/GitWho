@@ -1,53 +1,38 @@
 # GitWho README
 
-This is the README for your extension "GitWho". After writing up a brief description, we recommend including the following sections.
+GitWho is a VS Code extension that helps you track and highlight the changes made by specific authors in your project. Using the power of git blame, GitWho allows you to select an author and highlights their changes in the code. It also shows those changes in the minimap, making it easier to track contributions throughout your codebase.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Author Selection: Quickly select an author from a list of contributors to highlight their changes.
 
-For example if there is an image subfolder under your extension project workspace:
+Git Blame Integration: Highlights lines modified by the selected author using git blame.
 
-\!\[feature X\]\(images/feature-x.png\)
+Minimap Highlights: Highlights the author's changes in the VS Code minimap for easy tracking.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Randomized Color Highlights: Changes are highlighted with pastel colors that change every time you select a new author.
+
+Sidebar Integration: Displays a custom sidebar view like GitLens, giving you a more intuitive overview of author contributions.
+
+
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Prerequisites
+1) VS Code: Make sure you have Visual Studio Code installed.
+
+2) Git: The extension requires Git to be installed in your system, as it uses git blame to fetch commit information.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1) Open the VS Code Marketplace.
 
-For example:
+2) Search for GitWho and install the extension.
 
-This extension contributes the following settings:
+Alternatively, you can install the extension locally by opening the VS Code command palette and running the following command:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+    ext install <your-publisher-name>.<extension-name>
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
 
 ## Following extension guidelines
 
