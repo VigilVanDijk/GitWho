@@ -2,12 +2,25 @@ import path from "path";
 import { exec } from "child_process";
 import * as vscode from "vscode";
 
+
+function getRandomPastelColor(): string {
+  const hue = Math.floor(Math.random() * 360); 
+  const safeHue = (hue >= 45 && hue <= 65) ? (hue + 30) % 360 : hue;
+
+  return `hsl(${safeHue}, 40%, 40%)`;
+}
+
+let decorationType = vscode.window.createTextEditorDecorationType({
+  backgroundColor: 'red', // just a placeholder, is never actiually set to red
+});
+
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
     "GitWho.showAuthorChanges",
     async () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) return;
+
 
       const exec = require("child_process").exec;
 
@@ -71,19 +84,19 @@ export function activate(context: vscode.ExtensionContext) {
 
           if (!picked) return;
 
+
+          editor.setDecorations(decorationType, []);
+
           const pickedAuthor = picked;
           vscode.window.showInformationMessage("Showing changes made by author: " + pickedAuthor.label);
 
 		     const decorations: vscode.DecorationOptions[] = [];
 
-		     vscode.window.showInformationMessage("That shit didnt work 1");
-
-
           stdout.split("\n").forEach((line, idx) => {
             // Check each line of git blame output
-            const match = line.match(/\(([^)]+)\s+\d{4}-\d{2}-\d{2}/); // Grabs the name inside parentheses before the date
+            const match = line.match(/\(([^)]+)\s+\d{4}-\d{2}-\d{2}/); 
             if (match) {
-              const author = match[1].trim(); // Extract the author name
+              const author = match[1].trim(); 
           
               vscode.window.showInformationMessage(`Matched author: ${author}`);
           
@@ -96,10 +109,13 @@ export function activate(context: vscode.ExtensionContext) {
             }
           });
 
-          const decorationType = vscode.window.createTextEditorDecorationType({
-            backgroundColor: "rgba(255,255,0,0.3)",
+          decorationType = vscode.window.createTextEditorDecorationType({
+            backgroundColor: getRandomPastelColor(),
+            overviewRulerColor: getRandomPastelColor(),
+            overviewRulerLane: vscode.OverviewRulerLane.Right,
+            isWholeLine: false
           });
-
+ 
            editor.setDecorations(decorationType, decorations);
         }
       );
@@ -107,4 +123,8 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(disposable);
+}
+
+export function deactivate() {
+  vscode.window.activeTextEditor?.setDecorations(decorationType, []);
 }
