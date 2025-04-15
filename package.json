@@ -10,7 +10,7 @@
   "categories": [
     "Extension Packs"
   ],
-  "icon": "mainIcon.png",
+  "icon": "media/mainIcon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/VigilVanDijk/GitWho"
