@@ -10,7 +10,7 @@
   "categories": [
     "Other"
   ],
-  "icon": "icon.png",
+  "icon": "mainIcon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/VigilVanDijk/GitWho"
@@ -33,7 +33,7 @@
         {
           "id": "gitWhoSidebar",
           "title": "GitWho",
-          "icon": "media/gitwho-icon.svg"
+          "icon": "media/sidebar_icon.svg"
         }
       ]
     },
