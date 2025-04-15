@@ -11,7 +11,7 @@ function getRandomPastelColor(): string {
 }
 
 let decorationType = vscode.window.createTextEditorDecorationType({
-  backgroundColor: 'red', // just a placeholder, is never actiually set to red
+  backgroundColor: 'red', // just a placeholder, is never actually set to red
 });
 
 export function activate(context: vscode.ExtensionContext) {
