@@ -40,6 +40,10 @@ v0.0.1 (launched 15/04/2025) - The extension searches for all authors that have 
 
 v0.1.0 (launched 17/04/2025) - Added a better way of disabling/un-highlighting the code 
 
+v0.1.1 (launched 17/04/2024) - Changelog and Readme Updated
+
+v0.2.0 (launched 17/04/2025) - Added an option on the status bar to un-highlight the code
+
 ## Known Issues
 
 The extension requires the user to use the command pallete to launch it, there should be a more accessible way to do that

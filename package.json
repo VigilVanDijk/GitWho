@@ -2,7 +2,7 @@
   "name": "GitWho",
   "displayName": "GitWho",
   "description": "Allows user to see all contributors to a file",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "VigilVanDijk",
   "engines": {
     "vscode": "^1.99.0"
