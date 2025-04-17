@@ -117,15 +117,10 @@ statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Righ
             const match = line.match(/\(([^)]+)\s+\d{4}-\d{2}-\d{2}/); 
             if (match) {
               const author = match[1].trim(); 
-          
-              vscode.window.showInformationMessage(`Matched author: ${author}`);
-          
               if (author.toLowerCase().includes(pickedAuthor.label.toLowerCase())) {
                 const range = new vscode.Range(idx, 0, idx, 1000); // Create range for highlighting
                 decorations.push({ range });
               }
-            } else {
-              vscode.window.showInformationMessage("No match found");
             }
           });
 
