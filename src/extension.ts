@@ -88,7 +88,15 @@ export function activate(context: vscode.ExtensionContext) {
           editor.setDecorations(decorationType, []);
 
           const pickedAuthor = picked;
-          vscode.window.showInformationMessage("Showing changes made by author: " + pickedAuthor.label);
+
+          vscode.window.showInformationMessage("Showing changes made by author: " + pickedAuthor.label, "Clear").then(s=>
+            {
+             if(s === "Clear")
+             {
+               editor.setDecorations(decorationType, []);
+             }
+            }
+            )
 
 		     const decorations: vscode.DecorationOptions[] = [];
 

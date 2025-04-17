@@ -21,14 +21,6 @@
 "contributes": {
   "viewsContainers": {
   },
-  "views": {
-    "gitWhoContainer": [
-      {
-        "id": "gitWhoView",
-        "name": "Author Picker"
-      }
-    ]
-  },
   "commands": [
     {
       "command": "GitWho.showAuthorChanges",
