@@ -14,7 +14,25 @@ let decorationType = vscode.window.createTextEditorDecorationType({
   backgroundColor: 'red', // just a placeholder, is never actually set to red
 });
 
+let statusBarItem: vscode.StatusBarItem;
+
 export function activate(context: vscode.ExtensionContext) {
+
+  const clearHighlightsCommand = vscode.commands.registerCommand("GitWho.clearHighlights", () => {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) return;
+    editor.setDecorations(decorationType, []);
+    statusBarItem.hide();
+  });
+
+  context.subscriptions.push(clearHighlightsCommand);
+
+statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+  statusBarItem.text = "$(trash) Clear Highlights";
+  statusBarItem.tooltip = "Clear author highlights";
+  statusBarItem.command = "GitWho.clearHighlights";
+  context.subscriptions.push(statusBarItem);
+
   const disposable = vscode.commands.registerCommand(
     "GitWho.showAuthorChanges",
     async () => {
@@ -89,14 +107,8 @@ export function activate(context: vscode.ExtensionContext) {
 
           const pickedAuthor = picked;
 
-          vscode.window.showInformationMessage("Showing changes made by author: " + pickedAuthor.label, "Clear").then(s=>
-            {
-             if(s === "Clear")
-             {
-               editor.setDecorations(decorationType, []);
-             }
-            }
-            )
+          vscode.window.showInformationMessage("Showing changes made by author: " + pickedAuthor.label)
+           
 
 		     const decorations: vscode.DecorationOptions[] = [];
 
@@ -124,8 +136,8 @@ export function activate(context: vscode.ExtensionContext) {
             overviewRulerLane: vscode.OverviewRulerLane.Right,
             isWholeLine: false
           });
- 
            editor.setDecorations(decorationType, decorations);
+          statusBarItem.show();
         }
       );
     }
