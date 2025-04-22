@@ -17,7 +17,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Changelog created and updated
 
 ## v0.2.0
-- A "Clear Highlights option now appears on the bottom right status bar"
+- A "Clear Highlights" option now appears on the bottom right status bar
 - Users can now click this option to unhighlight the code
 - The older "clear" option from pop-up message has been removed, for it was transient and would disappear after some time
 - The pop-up now only shows the name of the selected author
